@@ -1,14 +1,12 @@
-spring:
-  cloud:
-    config:
-      uri: http://localhost:8888
-  application:
-    name: discovery-server
----
-spring:
-  config:
-    activate:
-      on-profile: docker
-  cloud:
-    config:
-      uri: http://config-server:8888
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  # standalone mode
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

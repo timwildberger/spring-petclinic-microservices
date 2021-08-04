@@ -133,13 +133,14 @@
                     <plugins>
                         <plugin>
                             <groupId>com.spotify</groupId>
-                            <artifactId>docker-maven-plugin</artifactId>
-                            <version>${docker.plugin.version}</version>
+                            <artifactId>dockerfile-maven-plugin</artifactId>
+                            <version>${dockerfile-maven-version}</version>
                             <executions>
                                 <execution>
-                                    <phase>install</phase>
+                                    <id>default</id>
                                     <goals>
                                         <goal>build</goal>
+                                        <goal>push</goal>
                                     </goals>
                                 </execution>
                             </executions>
